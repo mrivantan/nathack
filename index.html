@@ -8,16 +8,19 @@
 <body>
 
 
-<canvas id="my-canvas" style="width: 100%;"></canvas>
+<canvas id="main-canvas"></canvas>
 
-<div id="users-container" style="text-align: center;">
-    <video id="myvideo" class="user-stream" autoplay muted></video>
+<hr class="divider">
+
+<div id="users-container">
+    <video id="my-video" class="user-stream" autoplay muted></video>
 </div>
-<canvas id="raw-canvas" style="display: none"></canvas>
+<small style="display:block; text-align: center">press 'space' to change filter (currently only 1)</small>
+<canvas id="raw-canvas"></canvas>
 
 <script src="javascript/skylinkclient.js"></script>
 <script src="javascript/canvas.js"></script>
-<script type="text/paperscript" src="javascript/paper.js" canvas="my-canvas"></script>
+<script type="text/paperscript" src="javascript/paper.js" canvas="main-canvas"></script>
 
 </body>
 </html>

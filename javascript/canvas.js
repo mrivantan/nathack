@@ -7,22 +7,23 @@ var camFilter = {
     focusedUser: 0,
     density: 32,
     init: function () {
-        this.cvs = document.getElementById('raw-canvas');
-        this.ctx = this.cvs.getContext('2d');
         var self = this;
-        this.video = this.users[this.focusedUser];
-        this.video.addEventListener("play", function () {
+        self.cvs = document.getElementById('raw-canvas');
+        self.ctx = self.cvs.getContext('2d');
+        self.video = self.users[self.focusedUser];
+
+        self.video.addEventListener("play", function () {
             self.width = self.video.videoWidth / self.density;
             self.height = self.video.videoHeight / self.density;
             self.cvs.width = self.width;
             self.cvs.height = self.height;
-             self.timerCallback();
+            self.timerCallback();
         }, false);
     },
     timerCallback: function () {
         if (this.video.paused || this.video.ended) return;
-        this.setFrame();
         var self = this;
+        self.setFrame();
         setTimeout(function () {
             self.timerCallback();
         }, 0);
@@ -41,17 +42,23 @@ var camFilter = {
     },
     getData: function () {
         if (this.ctx == undefined || this.width == undefined) return;
-        var frame = this.ctx.getImageData(0, 0, this.width, this.height);
-        var colors = [];
         var self = this;
+        var frame = self.ctx.getImageData(0, 0, self.width, self.height);
+        var colors = [];
         for (var y = 0; y < self.height; y++) {
             for (var x = 0; x < self.width; x++) {
                 var offsetY = y * self.width * 4;
                 var offsetX = x * 4;
-                var rgbxy = [frame.data[offsetY + offsetX], frame.data[offsetY + offsetX + 1], frame.data[offsetY + offsetX + 2], self.width-x, y];
+                var rgbxy = [
+                    frame.data[offsetY + offsetX],
+                    frame.data[offsetY + offsetX + 1],
+                    frame.data[offsetY + offsetX + 2], self.width-x, y];
                 colors.push(rgbxy);
             }
         }
         return colors;
+    },
+    getSize: function (){
+        return [this.width, this.height];
     }
 };

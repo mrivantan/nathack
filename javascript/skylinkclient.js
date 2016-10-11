@@ -24,7 +24,7 @@ skylink.on('peerLeft', function(peerId, peerInfo, isSelf) {
 });
 
 skylink.on('mediaAccessSuccess', function(stream) {
-    var vid = document.getElementById('myvideo');
+    var vid = document.getElementById('my-video');
     attachMediaStream(vid, stream);
     camFilter.refreshUsersList();
     camFilter.init();
