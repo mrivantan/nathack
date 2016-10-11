@@ -1,0 +1,13 @@
+*{
+    border: 1px dotted blue;
+}
+body{
+    margin:0;
+}
+.user-stream{
+    height: 50px;
+}
+
+#myvideo{
+    transform: rotateY(-180deg);
+}
