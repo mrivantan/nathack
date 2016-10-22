@@ -1,0 +1,148 @@
+<div class="full-screen welcome-screen" style="padding-top: 2em; padding-bottom: 2em;">
+
+    <div id="one" class="container container-rounded bg-white" style="max-width: 800px; padding: 1em;">
+        <!--<img src="https://upload.wikimedia.org/wikipedia/fr/3/3b/Logo_Carrefour.svg"-->
+             <!--class="center-block logo-small">-->
+
+
+        <div id="two" style="width: 100px; height:100px; margin: auto; border-radius: 50%; overflow: hidden;
+             transform: translate3d(0,0,0); text-align: center">
+            <video id="video" autoplay style="height:100px;"></video>
+
+
+        </div>
+        <h3 class="text-center" style="margin-bottom: 0; padding-bottom: 0;font-family: Impact;">HOLA</h3>
+        <h1 id="three" class="text-center box-with-text" style=""><span ng-bind="ctrl.user.name"></span></h1>
+
+        <!--<hr style="width:50%;">-->
+
+        <div id="four" class="chart">
+            <iframe src="/views/d3sample.html" style="width: 100%; height: 400px; overflow: hidden; border: none" scrolling="no"></iframe>
+
+        </div>
+
+        <h3 id="five" class="text-center">CART</h3>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Item</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Units</th>
+                <th>Last purchase</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <img src="http://rs956.pbsrc.com/albums/ae45/rebeccacrawford01/coke.jpg~c200"
+                         class="center-block img-circle" style="border: 4px solid lightcoral; width: 50px;">
+                </td>
+                <td>
+                    COCA COLA LIGHT 50
+                </td>
+                <td>
+                    0.79
+                </td>
+                <td>
+                    <input type="number" value="10" class="form-control">
+                </td>
+                <td>
+                    2016-01-14
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="http://rs619.pbsrc.com/albums/tt272/kcthegr895/My%20Beautiful%20Disasters/Bread/Baguette/Baguette_zps23d0beb1.jpg~c200"
+                         class="center-block img-circle" style="border: 4px solid lightcoral; width: 50px;">
+                </td>
+                <td>
+                    BAGUETTE CARREFOUR
+                </td>
+                <td>
+                    0.36
+                </td>
+                <td>
+                    <input type="number" value="2" class="form-control">
+                </td>
+                <td>
+                    2016-01-12
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="http://www.missupermercados.com/images/q/queso-rallado-mozzarella-arla-150-g-pid-78116314.jpg"
+                         class="center-block img-circle" style="border: 4px solid lightcoral; width: 50px;">
+                </td>
+                <td>
+                    MOZZARELLA ARLA
+                </td>
+                <td>
+                    1.51
+                </td>
+                <td>
+                    <input type="number" value="2" class="form-control">
+                </td>
+                <td>
+                    2016-01-12
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <button id="six" class="btn btn-lg btn-primary animated fadeInDown" style="width: 100%;">BUY</button>
+
+
+    </div>
+</div>
+
+<style>
+    .box-with-text {
+        background-image: -webkit-linear-gradient(crimson 50%, #317aff 50%);
+        background-repeat: repeat;
+        background-position: 0 0;
+        background-size: 100% 50px;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-animation: stripes 2s linear infinite;
+        animation: stripes 2s linear infinite;
+    }
+
+    @keyframes stripes {
+        100% {
+            background-position: 0 -50px;
+        }
+    }
+
+    .box-with-text {
+        position: relative;
+        margin-top:0.5em;
+        margin-bottom: 0;
+        left: 50%;
+
+        white-space: nowrap;
+        text-align: center;
+        text-transform: uppercase;
+        font: bold 5em Impact;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+</style>
+
+<script>
+    $('#one').addClass('animated fadeInDown');
+    $('#one').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        $('#two').addClass('animated bounceIn');
+    });
+    $('#two').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        $('#three').addClass('animated shake');
+    });
+
+</script>
+
+
+

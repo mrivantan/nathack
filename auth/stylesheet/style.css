@@ -1,0 +1,45 @@
+* {
+    /*border: 1px blue dotted;*/
+}
+
+body{
+    margin: 0;
+}
+
+#my-video,#main-canvas{
+    position: absolute;
+    width: 320px;
+    height: 240px;
+}
+
+.full-screen{
+    width: 100%;
+    min-height: 100vh;
+}
+.welcome-screen{
+    background: url('../images/red-fruits-wallpaper.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.container-400{
+    max-width: 400px;
+    padding: 2em;
+}
+.container-rounded{
+    border-radius: 10px;
+}
+.true-center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.bg-white{
+    background-color: white;
+}
+.bg-white-trans{
+    background-color: rgba(255,255,255,0.8);
+}
+
+.logo-small{
+    max-width: 100px;
+}
